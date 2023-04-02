@@ -1,0 +1,23 @@
+server:
+  port: 8080
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?databaseTerm=SCHEMA&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useAffectedRows=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+logging:
+  file:
+    path: ./logs
+jwt:
+  header: Authorization
+  refresh_token_header: RefreshToken
+  secret: mySecret
+  access_token_expiration: 600
+  refresh_token_expiration: 864000
